@@ -1,0 +1,16 @@
+## Practice Exercises for Week 2
+
+Before starting to address analysis questions, it’s a good idea to get a feel for what our
+data look like. To get started, I suggest you use the Row and Column shelves and the
+Marks Card in the Tableau workspace to determine:
+
+**Excercise 1**
+1) How many unique dogs are in the data set (indicated by the number of unique
+entries in Dog ID)?
+2) How many unique (human) users are in the data set (indicated by the number of
+unique entries in User ID)?
+
+##Tableau
+1. drag Dog ID, User ID into Rows. 
+2. Measure-> Count(Distinct)
+
