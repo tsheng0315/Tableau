@@ -147,7 +147,7 @@ Q: Use the information to make a recommendation about a geographical market shou
 In terms of marketing and long-term business strategy, wile it is of Dognition's interest to continue focusing on the above geographical 
 markets, it may also want to expand more into other dog-friendly countries, such as France, Norway and Luxembourg. 
 
-#### Exercise 5
+### Exercise 5
 Aim: Assess the hypothesis that customers who complete tests quickly are more likely 
 to complete more tests overall. 
 
