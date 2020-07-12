@@ -32,8 +32,8 @@ To get an idea of what some of the strange values might mean:
 1. State on Rows
 2. State aggregated by Count on Text of the Marks card. 
 
-You will get a table with all values of State in the first column and the number of rows of data that have these
-values in the second column. 
+You will get a table with all values of State in the first column and 
+the number of rows of data that have these values in the second column. 
 
 3. Right-click on a row-> “View Data” to see full data.  
 Any ideas of what the numerical entries in the State field were likely supposed to represent (at
@@ -41,24 +41,25 @@ one point)?
 
 ###### Third:
 Another quality check:
-1. Sign in Count on the Rows. Then de-aggregate the data in the workspace through the “Analysis” menu.
-You will see that there are some clear
-outliers in this variable. 
+1. 'Sign in Count' on Rows. 
+2. Un-aggregate the data.
+You will see that there are some outliers in this variable. 
 
-right-click on the individual data points to see the raw data underlying them, 
-note what columns of data seem to be common to all the rows displayed at this point. 
-We will want to examine these outliers and possibly exclude them from future analyses.
+3. Right-click on the individual points to see the full data, 
+note the pattern of data(most common character) displayed at this point. 
 
-Recall that one way to exclude outliers is to group together the individual Dog IDs that are
-associated with all the extreme points on the graph, so that they can be filtered out of your
-analyses. 
-For that to be possible, you will need to put the Dog ID field on Details of the
-Marks card. 
-Note the difference between the raw data underlying the points you click on now, compared to before you put Dog ID on Details. 
+###### Forth:
+Examine and exclude  outliers for further analyses.
+
+1. Group together the outliers Dog IDs, filter them out of your analyses. 
+2. Put the Dog ID field on Details of the Marks card. 
+
 Group together all the data points that have Sign In Counts of above 175.
 
-We have confirmed that these Dog IDs represent test accounts that Dognition used to
-troubleshoot their website. For the rest of the practice exercises using the
-dognition_data_aggregated_by_dogid data set, exclude these Dog IDs from your analyses
-by putting the grouped variable you just made on the Filter shelf and excluding all of the
-data points in the group with extreme values.
+###### Fifth:
+Exclude outliers Dog IDs from analyses:
+
+3. 'Sign in Count' on Rows. 
+4. Un-aggregate the data.
+5. Drag Dog IDs(grouped) at Filter shelf 
+6. Excluding all of the data points in the group with extreme values.
