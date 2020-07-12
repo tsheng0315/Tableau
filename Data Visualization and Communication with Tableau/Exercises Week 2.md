@@ -4,25 +4,25 @@ Before starting to address analysis questions, it’s a good idea to get a feel 
 data look like. To get started, I suggest you use the Row and Column shelves and the
 Marks Card in the Tableau workspace to determine:
 
-*Excercise 1
+### Excercise 1
 1) How many unique dogs are in the data set (indicated by the number of unique
 entries in Dog ID)?
 2) How many unique (human) users are in the data set (indicated by the number of
 unique entries in User ID)?
 
-* Solution for Excercise 1
+### Solution for Excercise 1
 1. drag Dog ID, User ID into Rows. 
 2. Measure-> Count(Distinct)
 
 * As a discussion point, what does it mean if the number of unique User IDs is different
 from the number of unique Dog IDs?
-• A user may have multiple dogs
+• A user may have many dogs
 
 Before addressing primary analysis questions, examine whether there are questionable values
 that may be mistakes or outliers.
 
 First, drag Country to Rows as a dimension to see what countries are represented in our data set.
-Turn Country pill into measure and aggregate it by Count(Distinct) to see how many countries there are in total.
+Turn Country pill into *measure* and *aggregate* it by *Count(Distinct)* to see how many countries there are in total.
 
 Next, do the same for State. When you do, you will find that many entries in State have
 curious values! This is an example of how real-world data sets can be messy. To get an
