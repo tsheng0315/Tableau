@@ -5,6 +5,8 @@ data look like. To get started, I suggest you use the Row and Column shelves and
 Marks Card in the Tableau workspace to determine:
 
 ### Excercise 1
+Have a feeling for what our data look like
+
 1) How many unique dogs are in the data set (indicated by the number of unique
 entries in Dog ID)?
 2) How many unique (human) users are in the data set (indicated by the number of
@@ -63,3 +65,27 @@ Exclude outliers Dog IDs from analyses:
 4. Un-aggregate the data.
 5. Drag Dog IDs(grouped) at Filter shelf 
 6. Excluding all of the data points in the group with extreme values.
+
+
+### Exercise 2
+Start addressing some of the questions in analysis plan: 
+* make a recommendation to Dognition, to increase the number of tests customers complete. 
+1. Identify the features of dogs/their owners that have correlated with increased completion scores in
+the past.
+
+(The 'dognition_data_aggregated_by_dogid' provides data about the total number of tests completed by each dog
+and/or human customer (as opposed to about each test completed).)
+
+Aim 1: Examine features of dogs that correlate with differences in the number of tests the dogs complete. 
+
+1. Total Tests Completed: the total number of tests customers completed. 
+2. The mean and median “ITI” : in minutes/hours for the tests each dog completed, 
+3. Inter-test interval: time elapsed between the first and last tests each dog completed.
+
+Aim 2: Address how personalities and breed of dogs affect completion metrics
+1. Make visualizations with any of the variables described above, and Breed Type, Breed Group, Dimension variables. 
+2. Try different combinations of dependent variables and independent variables in the Rows and Columns and/or Marks card. 
+3. Types of Breeds & types of Personality.
+
+'Dimension' can only be assigned to dogs after they have completed the first 20 tests.
+
