@@ -2,25 +2,25 @@
 Note that we use comma (,) to separate groups of thousands in numbers.
 How many unique human user IDs are there in the Dognition_aggregated_by_DogID data set?
 
-Answer: 16,261
+16,261
 
 2. What feature is common to all the rows that have a value of 37 in the “State” field 
 of the Dognition_aggregated_by_DogID data set? Check all that apply.
 
-Answer: They are all from Estonia
+They are all from Estonia
 
 3. What property is common to almost all the data points that had “Sign In Counts” of 
 greater than 175 in the Dognition_aggregated_by_DogID data set?
 
-Answer:They are all Shih Tzus that weigh 190 lbs
+They are all Shih Tzus that weigh 190 lbs
 
 4. The Personality Dimension that has the highest average number of completed tests in the Dognition_aggregated_by_DogID data set is clearly:
 
-Answer: None of them. All of the personality dimensions have very similar completion rates.
+None of them. All of the personality dimensions have very similar completion rates.
 
 5. In the Dognition_aggregated_by_DogID data set, what is consistent about the relationship between breeding group and number of tests completed, regardless of whether you aggregate the variable representing the number of tests completed by the median or the average of the breeding group?
 
-Answer: Toy dogs complete the least number of tests
+Toy dogs complete the least number of tests
 
 6. In the Dognition_aggregated_by_DogID data set, what personality type has the strongest representation (greatest number of records) in the sporting breed group?
 
