@@ -125,72 +125,49 @@ When you are confident your calculation is correct, you are ready to interpret y
 To aid in this, bring another copy of *(Corrected)Created At*  to **filter**. 
 Choose the options that allow you to filter by “Weekdays.”
 
-![](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2015.03.32.png)
-
 ##### Analysis:
 1. What hours of the day do customers tend to play games? 
+![](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2015.03.32.png)
 2. Do those hours change at different times of the week? 
 ![](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2015.06.33.png)
 3. When you should send advertisements to customers?
 
 #### Exercise 3
-We heard Eliot describe in the “Meet Your Dognition Data” video the story of how
-Dognition tried giving the Dognition tests to some customers in a different order than they
-typically do now. 
+**Q**: Assess whether the “Free Start” promotions worked.
+*Free Start User*:
+1: Yes
+0/Null: No
+**Steps**:
+1. Determine whether the user began their Dognition experience with a free start. 
 
-The hope was that doing so would increase the number of tests users
-completed overall (it didn’t, according to Eliot). 
+Implement grouping: create a grouped variable that has two options: “Free Start” or “Non-Free Start” based on *Free Start User*.
 
-During discussions off-camera, Eliot shared some information about other experiments
-Dognition has implemented as well. In particular, Dognition periodically tries offering a
-“Free Start” promotion to customers that gives the customers the first four tests for free.
+2. Get an idea of how many data points you have for both categories(Visualization & Marks Card). 
+Examine when *Free Start users* were enrolled, and how many *non-Free Start users* were enrolled at the same time. 
 
-The hypothesis (or hope) would be that once potential customers get a chance to
-experience the product first-hand, they will be more likely to buy a subscription. In this
-exercise, we are going to assess whether the “Free Start” promotions worked.
+3. 
+**Columns**: *Free Start User(Group)*, *Rank by DogID*. 
+**Rows**: *Put Dog ID*(Count (distinct) ). 
 
-Free Start User indicates whether the user began their Dognition experience with a free
-start. Currently Free Start User has three possible values: 1, 0, and NULL. 
+It looks like perhaps *Free Start* users do not finish as many tests as *non-Free Start*users, but it’s hard to know for sure because there are so many fewer *Free Start* users to start with. 
+A more direct way to assess the success of *Free Start* users would be to compute a table calculation that would tell you what percentage of users who start the
+Dognition Assessment make it to each test along the way. 
 
-The
-Dognition team confirmed that the 0 and Null entries should be considered the same
-group, and neither group had free starts. To implement the suggested grouping, right-click
-(control-click) on Free Start User to make a grouped variable that has just two options:
-“Free Start” or “No Free Start.” 
-
-Next, use either a visualization or text tables through the
-Marks Card to get an idea of how many data points you have for both categories. Also
-examine when Free Start users were enrolled, and how many non-Free Start users were
-enrolled at the same time. 
-
-This will give you an idea of the kind of control groups to
-which you might have access when drawing conclusions.
-Next, put the Free Start User(Group) on the Columns shelf, followed by Rank by DogID
-as a dimension. Put Dog ID on the rows shelf, aggregated by Count (distinct). You
-should see two graphs that depict the number of dogs who have completed 1- 45 tests, one
-for those who began with a free start, and one for those who didn’t. These visualizations
-make it look like perhaps Free Start users do not finish as many tests as non-Free Start
-users, but it’s hard to know for sure because there are so many fewer Free Start users to
-start with. A more direct way to assess the success of Free Start users would be to
-compute a table calculation that would tell you what percentage of users who start the
-Dognition Assessment make it to each test along the way. Fortunately, this is one of the
-default table calculations Tableau offers.
 Without removing any of the pills you currently have on the Columns or Rows shelves,
-drag another instance of Dog ID to the Rows shelf. Click on the drop down and choose
-quick table calculation option, followed by “percent of total.” You should now have one
-set of bar charts that show you the raw numbers of dogs who completed a certain number
-of tests, and a second set of charts that show you what percentage of a total those raw
-numbers represent.
+drag another instance of *Dog ID* to the **Rows** shelf. 
+Click on the drop down and choose quick table calculation option, followed by “percent of total.” 
+You should now have one set of bar charts that show you the raw numbers of dogs who completed a certain number
+of tests, and a second set of charts that show you what percentage of a total those raw numbers represent.
 The goal in making the table calculation was to determine what percentage of those who
-start their Dognition experience with a free start finish each number of tests. Do the
-charts you see depict that? Probably not, because the calculated field is likely making
+start their Dognition experience with a free start finish each number of tests. 
+Do the charts you see depict that? Probably not, because the calculated field is likely making
 calculations with all the data in the work space together at the same time, rather than
-doing the calculation separately for different partitions within the work space. You have
-to tell Tableau what partitions the table calculation should take into account. To do this,
-click on the table calculation to edit it. Can you figure out how to set the advanced
-options so that the table calculation computes percentages separately for Free Start users
-vs non-Free Start users? Based on these results, do you think the Free Start tests seem to
-be working as intended?
+doing the calculation separately for different partitions within the work space. 
+You have to tell Tableau what partitions the table calculation should take into account. 
+To do this, click on the table calculation to edit it. 
+Can you figure out how to set the advanced options so that the table calculation computes percentages separately for Free Start users
+vs non-Free Start users? 
+Do you think the *Free Start* tests seem to be working as intended?
 
 #### Exercise 4
 In this exercise, we are going to use table calculations to determine how we could use Tableau to
@@ -225,7 +202,5 @@ succeeded by comparing your rank to the rank provided in Rank by DogID.
 Can you make a similar calculation that ranks the tests completed by each human user,
 mimicking the information provided in Rank by UserID? Can you figure out how to
 include both ranks in the same table?
-#### Exercise 5
-Choose one of the analyses from your analysis plan for this data set that we didn’t address,
-and design a visualization (or set of visualizations) that addresses it!
+
 
