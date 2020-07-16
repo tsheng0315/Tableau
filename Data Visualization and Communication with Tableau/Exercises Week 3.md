@@ -1,5 +1,5 @@
 ## Dynamic Data Manipulation and Presentation in Tableau
-### Goal: Increase the number of tests customers complete. 
+### Goal 1: Increase the number of tests customers complete. 
 (data set: 'dognition_data_no_aggregation')
 
 Can't combine variables that are aggregated at/with different levels. 
@@ -40,114 +40,130 @@ You will have to aggregate these variables appropriately to extract the informat
 4. *Total Tests Completed* in 'dognition_data_aggregated_by_dogid' =
 the maximum *Rank by DogID* value (associated with each *Dog ID*)in 'dognition_data_no_aggregation'. 
 ##### tableau
+
 **Columns**: *Rank by DogID* 
+
 **Rows**: *Number of Records* (DogID(count))
 
 The Dognition tests are organized into subcategories of cognitive abilities/personality.
 (5 subcategories in the first 20 tests comprising the Dognition Assessment). 
+
 **Color**: *Subcategory Name*/*Test Name* 
 
 ![image](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2013.03.15.png)
+
 **Q**:
-After which tests do users tend to drop off? 
-Do they drop off in the middle of the tests within a subcategory, or at the end of all the tests associated with a subcategory? 
-What could this mean for Dognition?
+1. After which tests do users tend to drop off? 
+2. Do they drop off in the middle of the tests within a subcategory, or at the end of all the tests associated with a subcategory? 
+3. What could this mean for Dognition?
 
 
+#### Exercise 2
 
-Exercise 2
-In order to better target advertisements or reminder emails, it would be useful to know
-when customers tend to play the Dognition games. To assess this, we can take advantage
-of the information provided in Created At in the dognition_data_no_aggregation data set.
-Created At has a time stamp of every test recorded by a customer (this information was
-lost when we used the version of the data set that aggregated over Dog ID last week). If
-we place Created At on the Columns shelf and Number of Records on the Rows shelf, we
-can use the full extent of Tableau’s date hierarchy to see when tests are taken most often.
-During which days of the week are customers most likely to play the games (hint: use the
-“weekday” level on the date hierarchy)? During which hours of the day are customers
-most likely to play the games (hint: use the “hour” level on the date hierarchy)?
-Look carefully at your visualizations that display which hours of the day customers are
-most likely to play games. Does anything look suspicious to you? It should! The data
-currently make it look like a lot of games are played in the middle of the night, but that
-doesn’t make sense. If you look at the raw data behind your graphs, you’ll start to get a
-feeling of what might be going on with this field of data.
-It should become apparent that the time stamps are provided in “Coordinated Universal
-Time” (UTC) and do not take time zones or daylight savings into account. Unfortunately,
-it is not very easy to adjust UTC time stamps for changes in time zones in Tableau (or
-most programs, for that matter). The best way to accomplish such a correction would be
-to find or assemble a separate data set that would provide a UTC correction for every entry
-in one of our location-related variables, and then blend that secondary data set with
-dognition_data_no_aggregation (a process we learned about in Lesson 3 this week).
-These data sets are not easy to find, but for the purposes of this course, we have assembled
-a data set that provides UTC corrections for a collection of United States zip codes. We
-will use a new method, called joining, to combine this data with the
-dognition_data_no_aggregation data set. The results of a joining will be easier to work
-with than the results of data blending in these specific circumstances.
-To join the zip code correction data with the dognition_data_no_aggregation data set,
-download a separate file called
-dognition_data_no_aggregation_with_time_zone_correction from the course website. This
-excel file will have the original dognition_data_no_aggregation data in one worksheet
-called “master table,” and the zip code correction data in a separate worksheet called “time
-zone correction.” Connect to this file with Tableau.
-On the initial data connection screen, drag both worksheets to the box where it says “drag
-sheets here” (it might take a while for the data to fully load). Make sure “master table” is
-on the left and “time zone correction” is on the right in the workspace. You should see
-that the worksheet names are connected with a line and two circles. Click on the circles
-and change the default from “inner” to “left join.” Choosing a left join will make sure you
-retain all the data from the master table, and will incorporate data from the time zone correction
+**Aim 2**: 
+To better target advertisements, need to know when customers tend to play the Dognition games. 
 
-worksheet whenever there is a zip code that matches between the two files (You will learn more
-about joins in the next course of this specialization, Managing Big Data with MySQL).
-Then go to a Tableau worksheet. You will see that Diff from UTC, which is the variable we
-essentially imported through the left join we just implemented, is in its own “time_zone_correction”
-heading in the variables pane. You can now use this variable as any other variable.
-We now have what we need to correct Created At for differences in time zone. Make a new row
-calculation that will adjust each value of Created At by the correction provided in Diff from UTC.
-Dates have their own unique functions for adding and subtracting values; I suggest you use the
-DATEADD function. Type the following formula into your calculated field:
+*Created At* has a time stamp of every test recorded by a customer.
+
+##### Tableau: 
+**Columns**: *Created At*
+
+**Rows**: *Number of Records*
+![im](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2013.44.57.png)
+
+**Use Tableau’s date hierarchy** 
+
+##### Analysis: 
+1. Which days of the week are customers likely to play the games? (Use “weekday” level on the date hierarchy)
+![im](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2014.03.01.png)
+2. Which hours of the day are customers likely to play the games (Use “hour” level on the date hierarchy)?
+![im](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2014.05.32.png)
+
+**Q**: Does anything look suspicious to you? 
+
+**A**: Many games are played at mid-night, doesn’t make sense. 
+
+**Reason**: The time stamps are provided in “Coordinated Universal Time” (UTC) and do not take time zones/daylight savings into account. 
+
+**Solution**: 
+1. find a UTC correction data set t0 provide correction for every entry in our location-related variables
+2. blend the secondary data set with 'dognition_data_no_aggregation'.
+
+Use **joining** method, to combine 'UTC corrections for a collection of United States zip codes' data set with 'dognition_data_no_aggregation'. 
+(The results of a joining will be easier to work with than the results of data blending.)
+
+**New data set**: 
+'dognition_data_no_aggregation_with_time_zone_correction':
+1. “master table”: the original 'dognition_data_no_aggregation'
+2. “timezone correction” : zip code correction data
+
+Drag both worksheets to the box where it says “drag sheets here”. 
+left: “master table” 
+right:“time zone correction”
+
+Click on the circles and change the default from “inner” to “left join.”
+
+(Left join: retain all the data from the master table, and incorporate data from 'time zone correction' when there is a zip code that matches between the two files.)
+You will see that *Diff from UTC* below “time_zone_correction” worksheet. 
+
+Make a row calculation that will adjust each value of *Created At* by the correction provided in *Diff from UTC*.
+
+use the **DATEADD** function in your calculated field:
+adjusted date
 DATEADD('hour',[Diff from UTC],[Created at])
-Make sure you specify “hour” in this formula so that the calculation knows to adjust the
-date at the level of hour rather than minute, second, or year, etc. Put your new calculated
-variable on the columns shelf, and number of records on the rows shelf. Keeping your
-new variable as a dimension, adjust it so that it is displaying data at the level of “hour” in
-the date hierarchy. Right-click (control-click) on the “Null” subheading in the graph and
-choose “Hide.”
-Next, make sure your calculation is outputting what you expect it to by right-clicking
-(control-clicking) on one of the data points to look at the underlying data. You should be
-able to see the original version of Created At, the new corrected version of Created At
-(which will have whatever title you gave it when making the calculated field), and Diff
-from UTC for each row. Does it appear that the calculation was implemented correctly?
-If not, double-check your calculated field.
-When you are confident your calculation is correct, you are ready to interpret your new,
-time-zone corrected results. To aid in this, bring another copy of your (Corrected)
-Created At variable to the filter shelf. Choose the options that allow you to filter by
-“Weekdays.” Show the quick filter. What hours of the day do customers tend to play
-games (although, remember, these results only reflect US countries where you have zip
-code data)? Do those hours change at different times of the week? What implications
-could this have for when you should send reminders or advertisements to customers or
-potential customers?
 
-Exercise 3
+**columns**: 'adjusted date'
+**rows**: count of records
+Keep 'adjusted date' as a dimension, so that it is at the level of “hour” in the date hierarchy. 
+
+Right-click on the “Null” subheading and choose “Hide”.
+
+You should be able to see the original version of *Created At*, the new corrected version of *Created At*
+(title of the calculated field)for each row. 
+
+When you are confident your calculation is correct, you are ready to interpret your new, time-zone corrected results. 
+To aid in this, bring another copy of *(Corrected)Created At*  to **filter**. 
+Choose the options that allow you to filter by “Weekdays.”
+
+![](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2015.03.32.png)
+
+##### Analysis:
+1. What hours of the day do customers tend to play games? 
+2. Do those hours change at different times of the week? 
+![](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2015.06.33.png)
+3. When you should send advertisements to customers?
+
+#### Exercise 3
 We heard Eliot describe in the “Meet Your Dognition Data” video the story of how
 Dognition tried giving the Dognition tests to some customers in a different order than they
-typically do now. The hope was that doing so would increase the number of tests users
+typically do now. 
+
+The hope was that doing so would increase the number of tests users
 completed overall (it didn’t, according to Eliot). 
 
 During discussions off-camera, Eliot shared some information about other experiments
 Dognition has implemented as well. In particular, Dognition periodically tries offering a
 “Free Start” promotion to customers that gives the customers the first four tests for free.
+
 The hypothesis (or hope) would be that once potential customers get a chance to
 experience the product first-hand, they will be more likely to buy a subscription. In this
 exercise, we are going to assess whether the “Free Start” promotions worked.
+
 Free Start User indicates whether the user began their Dognition experience with a free
-start. Currently Free Start User has three possible values: 1, 0, and NULL. The
+start. Currently Free Start User has three possible values: 1, 0, and NULL. 
+
+The
 Dognition team confirmed that the 0 and Null entries should be considered the same
 group, and neither group had free starts. To implement the suggested grouping, right-click
 (control-click) on Free Start User to make a grouped variable that has just two options:
-“Free Start” or “No Free Start.” Next, use either a visualization or text tables through the
+“Free Start” or “No Free Start.” 
+
+Next, use either a visualization or text tables through the
 Marks Card to get an idea of how many data points you have for both categories. Also
 examine when Free Start users were enrolled, and how many non-Free Start users were
-enrolled at the same time. This will give you an idea of the kind of control groups to
+enrolled at the same time. 
+
+This will give you an idea of the kind of control groups to
 which you might have access when drawing conclusions.
 Next, put the Free Start User(Group) on the Columns shelf, followed by Rank by DogID
 as a dimension. Put Dog ID on the rows shelf, aggregated by Count (distinct). You
@@ -176,7 +192,7 @@ options so that the table calculation computes percentages separately for Free S
 vs non-Free Start users? Based on these results, do you think the Free Start tests seem to
 be working as intended?
 
-Exercise 4
+#### Exercise 4
 In this exercise, we are going to use table calculations to determine how we could use Tableau to
 dynamically recreate the ranks stored in the Rank by DogID and Rank by UserID variables.
 These variables, remember, chronologically rank each test according to its associated time
@@ -209,7 +225,7 @@ succeeded by comparing your rank to the rank provided in Rank by DogID.
 Can you make a similar calculation that ranks the tests completed by each human user,
 mimicking the information provided in Rank by UserID? Can you figure out how to
 include both ranks in the same table?
-Exercise 5
+#### Exercise 5
 Choose one of the analyses from your analysis plan for this data set that we didn’t address,
 and design a visualization (or set of visualizations) that addresses it!
 
