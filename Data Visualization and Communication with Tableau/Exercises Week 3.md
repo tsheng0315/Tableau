@@ -113,7 +113,9 @@ adjusted date
 DATEADD('hour',[Diff from UTC],[Created at])
 
 **columns**: 'adjusted date'
+
 **rows**: count of records
+
 Keep 'adjusted date' as a dimension, so that it is at the level of “hour” in the date hierarchy. 
 
 Right-click on the “Null” subheading and choose “Hide”.
@@ -149,9 +151,9 @@ Examine when *Free Start users* were enrolled, and how many *non-Free Start user
 ##### Tableau
 **Columns**: *Free Start User(Group)*, *Rank by DogID*. 
 **Rows**: *Dog ID*(Count (distinct) ). 
-![](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2021.41.36.png)
+![](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2021.41.36.png)<!-- .element height="50%" width="50%" -->
 
-It looks like perhaps *Free Start* users do not finish as many tests as *non-Free Start*users, but it’s hard to know for sure because there are so many fewer *Free Start* users to start with. 
+It looks like *Free Start* users do not finish as many tests as *non-Free Start*users, but it’s hard to know for sure because there are fewer *Free Start* users to start with. 
 A more direct way to assess the success of *Free Start* users would be to compute a table calculation that would tell you what percentage of users who start the
 Dognition Assessment make it to each test along the way. 
 
