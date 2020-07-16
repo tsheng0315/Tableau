@@ -23,12 +23,12 @@ exclude Dognition’s testing accounts from your analyses.
 
 Tests will be given in the same order each time. 
 
-*Created At*: The order of tests a dog took(ranked by time stamp of the test). 
-*Rank by DogID*:
+1. *Created At*: The order of tests a dog took(ranked by time stamp of the test). 
+2. *Rank by DogID*:
 A rank order of 1 -> the test was the 1st test that dog took,
 A rank order of 5 -> the test was the 5th test the dog took.
 
-*Rank by UserID* -> The order of tests used by each human user. 
+3. *Rank by UserID* -> The order of tests used by each human user. 
 
 a) When a *User ID* is only associated with one *Dog ID*, the values of *Rank by DogID* and *Rank by UserID* in a
 row will be the same. 
@@ -37,9 +37,9 @@ b) When a *User ID* is associated with multiple *Dog ID*s, the values of *Rank b
 
 You will have to aggregate these variables appropriately to extract the information you want.
 
-*Total Tests Completed* in 'dognition_data_aggregated_by_dogid' =
+4. *Total Tests Completed* in 'dognition_data_aggregated_by_dogid' =
 the maximum *Rank by DogID* value (associated with each *Dog ID*)in 'dognition_data_no_aggregation'. 
-
+##### tableau
 **Columns**: *Rank by DogID* 
 **Rows**: *Number of Records* (DogID(count))
 
@@ -47,7 +47,7 @@ The Dognition tests are organized into subcategories of cognitive abilities/pers
 (5 subcategories in the first 20 tests comprising the Dognition Assessment). 
 **Color**: *Subcategory Name*/*Test Name* 
 
-![ ](https://github.com/tsheng0315/Tableau/tree/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image)
+![image](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2013.03.15.png)
 **Q**:
 After which tests do users tend to drop off? 
 Do they drop off in the middle of the tests within a subcategory, or at the end of all the tests associated with a subcategory? 
