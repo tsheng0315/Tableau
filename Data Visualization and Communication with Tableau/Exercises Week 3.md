@@ -144,11 +144,12 @@ Grouping: Group *Free Start User* into “Free Start”/“non-Free Start” .
 
 2. Get an idea of how many data points you have for both categories(Visualization & Marks Card). 
 Examine when *Free Start users* were enrolled, and how many *non-Free Start users* were enrolled at the same time. 
-![]{height=500px width=500px}(https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2021.34.09.png)
+![](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2021.34.09.png)
 
-3. 
+##### Tableau
 **Columns**: *Free Start User(Group)*, *Rank by DogID*. 
-**Rows**: *Put Dog ID*(Count (distinct) ). 
+**Rows**: *Dog ID*(Count (distinct) ). 
+![](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2021.41.36.png)
 
 It looks like perhaps *Free Start* users do not finish as many tests as *non-Free Start*users, but it’s hard to know for sure because there are so many fewer *Free Start* users to start with. 
 A more direct way to assess the success of *Free Start* users would be to compute a table calculation that would tell you what percentage of users who start the
