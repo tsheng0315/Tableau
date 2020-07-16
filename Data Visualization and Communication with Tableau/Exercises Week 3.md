@@ -1,4 +1,4 @@
-## Dynamic Data Manipulation and Presentation in Tableau
+## Week 3: Dynamic Data Manipulation and Presentation in Tableau
 ### Goal 1: Increase the number of tests customers complete. 
 (data set: 'dognition_data_no_aggregation')
 
@@ -140,10 +140,11 @@ Choose the options that allow you to filter by “Weekdays.”
 **Steps**:
 1. Determine whether the user began their Dognition experience with a free start. 
 
-Implement grouping: create a grouped variable that has two options: “Free Start” or “Non-Free Start” based on *Free Start User*.
+Grouping: Group *Free Start User* into “Free Start”/“non-Free Start” .
 
 2. Get an idea of how many data points you have for both categories(Visualization & Marks Card). 
 Examine when *Free Start users* were enrolled, and how many *non-Free Start users* were enrolled at the same time. 
+![]{height=500px width=500px}(https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2021.34.09.png)
 
 3. 
 **Columns**: *Free Start User(Group)*, *Rank by DogID*. 
