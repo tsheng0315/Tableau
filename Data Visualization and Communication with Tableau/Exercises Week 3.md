@@ -1,11 +1,10 @@
 ## Dynamic Data Manipulation and Presentation in Tableau
 ### Goal: Increase the number of tests customers complete. 
+(data set: 'dognition_data_no_aggregation')
 
-Use dognition_data_no_aggregation” data set
-
-Can not combine variables that are aggregated at/with different levels. 
-(The values in Total Tests Completed can only be understood at aggregation level of *Dog ID*,
-while other variables we are interested in have a different level of granularity (such as at the level of individual tests
+Can't combine variables that are aggregated at/with different levels. 
+(The values in *Total Tests Completed* can only be understood at aggregation level of *Dog ID*,
+different level of granularity, such as level of individual tests
 
 #### Exercise 1
 ##### Q1:Removing entries that are infeasible data. 
@@ -21,37 +20,38 @@ that indicates whether the row belongs in “keep”/“exclude” category.
 exclude Dognition’s testing accounts from your analyses.
 
 ##### Q2: Find out after which game users tend to drop out. 
-(use *Rank by DogID*. )
 
-Tests are given in the same order each time. 
+Tests will be given in the same order each time. 
 
-Order each test a dog took by its time stamp in *Created At*. 
+*Created At*: The order of tests a dog took(ranked by time stamp of the test). 
 *Rank by DogID*:
-A rank order of 1 indicates the test was the first test that dog took,
-a rank order of 5 indicates the test was the fifth test the dog took.
+A rank order of 1 -> the test was the 1st test that dog took,
+A rank order of 5 -> the test was the 5th test the dog took.
 
-Same for *User ID* and *Rank by UserID*, indicates the order of tests used by each human user. 
+*Rank by UserID* -> The order of tests used by each human user. 
 
-When a *User ID* is only associated with one *Dog ID*, the values of *Rank by DogID* and *Rank by UserID* in a
+a) When a *User ID* is only associated with one *Dog ID*, the values of *Rank by DogID* and *Rank by UserID* in a
 row will be the same. 
 
-When a *User ID* is associated with multiple *Dog ID*s, the values of *Rank by DogID* and *Rank by UserID* in a row may differ. 
+b) When a *User ID* is associated with multiple *Dog ID*s, the values of *Rank by DogID* and *Rank by UserID* in a row may differ. 
 
 You will have to aggregate these variables appropriately to extract the information you want.
 
-The *Total Tests Completed* in 'dognition_data_aggregated_by_dogid' is the maximum *Rank by DogID*
-value associated with each *Dog ID* in 'dognition_data_no_aggregation'. 
+*Total Tests Completed* in 'dognition_data_aggregated_by_dogid' =
+the maximum *Rank by DogID* value (associated with each *Dog ID*)in 'dognition_data_no_aggregation'. 
 
-Need to retrieve the maximum rank value associated with a *Dog ID* through the level of aggregation we ask 
-when using *Rank by DogID*.
-
-Columns: *Rank by DogID* 
-Rows: *Number of Records* ( DogID(count) )
+**Columns**: *Rank by DogID* 
+**Rows**: *Number of Records* (DogID(count))
 
 The Dognition tests are organized into subcategories of cognitive abilities/personality.
 (5 subcategories in the first 20 tests comprising the Dognition Assessment). 
+**Color**: *Subcategory Name*/*Test Name* 
 
-I highly recommend that you place *Subcategory Name* or *Test Name* on **Color**. 
+**Q**:
 After which tests do users tend to drop off? 
 Do they drop off in the middle of the tests within a subcategory, or at the end of all the tests associated with a subcategory? 
 What could this mean for Dognition?
+
+
+
+
