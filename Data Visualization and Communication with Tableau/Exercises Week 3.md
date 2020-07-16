@@ -49,9 +49,7 @@ The Dognition tests are organized into subcategories of cognitive abilities/pers
 (5 subcategories in the first 20 tests comprising the Dognition Assessment). 
 
 **Color**: *Subcategory Name*/*Test Name* 
-
-![image](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2013.03.15.png)
-
+<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2013.03.15.png"/>
 **Q**:
 1. After which tests do users tend to drop off? 
 2. Do they drop off in the middle of the tests within a subcategory, or at the end of all the tests associated with a subcategory? 
@@ -69,16 +67,14 @@ To better target advertisements, need to know when customers tend to play the Do
 **Columns**: *Created At*
 
 **Rows**: *Number of Records*
-![im](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2013.44.57.png)
-
+<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2013.44.57.png"/>
 **Use Tableau’s date hierarchy** 
 
 ##### Analysis: 
 1. Which days of the week are customers likely to play the games? (Use “weekday” level on the date hierarchy)
-![im](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2014.03.01.png)
+<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2014.03.01.png"/>
 2. Which hours of the day are customers likely to play the games (Use “hour” level on the date hierarchy)?
-![im](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2014.05.32.png)
-
+<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2014.05.32.png"/>
 **Q**: Does anything look suspicious to you? 
 
 **A**: Many games are played at mid-night, doesn’t make sense. 
@@ -129,9 +125,9 @@ Choose the options that allow you to filter by “Weekdays.”
 
 ##### Analysis:
 1. What hours of the day do customers tend to play games? 
-![](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2015.03.32.png)
+<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2015.03.32.png"/>
 2. Do those hours change at different times of the week? 
-![](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2015.06.33.png)
+<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2015.06.33.png"/>
 3. When you should send advertisements to customers?
 
 #### Exercise 3
@@ -146,16 +142,15 @@ Grouping: Group *Free Start User* into “Free Start”/“non-Free Start” .
 
 2. Get an idea of how many data points you have for both categories(Visualization & Marks Card). 
 Examine when *Free Start users* were enrolled, and how many *non-Free Start users* were enrolled at the same time. 
-![](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2021.34.09.png)
-
+<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2021.34.09.png"/>
 ##### Tableau
 
 **Columns**: *Free Start User(Group)*, *Rank by DogID*. 
 
 **Rows**: *Dog ID*(Count (distinct) ). 
-![](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2021.41.36.png)
-![](https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2021.52.24.png)
-<img width="150" height="150" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2021.52.24.png"/>
+<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2021.41.36.png"/>
+![]()
+<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2021.52.24.png"/>
 
 It looks like *Free Start* users do not finish as many tests as *non-Free Start*users, but it’s hard to know for sure because there are fewer *Free Start* users to start with. 
 A more direct way to assess the success of *Free Start* users would be to compute a table calculation that would tell you what percentage of users who start the
