@@ -130,16 +130,21 @@ Choose the options that allow you to filter by “Weekdays.”
 ##### Analysis:
 1. What hours of the day do customers tend to play games? 
 <img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2015.03.32.png"/>
+
 2. Do those hours change at different times of the week? 
 <img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2015.06.33.png"/>
+
 3. When you should send advertisements to customers?
 
 #### Exercise 3
 **Q**: Assess whether the “Free Start” promotions worked.
+
 *Free Start User*:
 1: Yes
 0/Null: No
+
 **Steps**:
+
 1. Determine whether the user began their Dognition experience with a free start. 
 
 Grouping: Group *Free Start User* into “Free Start”/“non-Free Start” .
@@ -169,7 +174,9 @@ non-Free Start users:
 **Rows**: *Dog ID* 
 
 Second CNTD(DogID)-> Edit Table Calculation-> 'percent of total'-> Specific Dimension -> Rank by DogID (addressing fields).
+
 **partition**: The table calculation is performed separately within each partition.
+
 **addressing**: Determine the direction of the calculation
 
 Free Start users:
@@ -187,6 +194,7 @@ The chart shows what percentage of those who start their Dognition experience wi
 Use table calculations to determine how we could dynamically recreate the ranks stored in the *Rank by DogID* and *Rank by UserID*.
 
 ##### Tableau
+
 **rows**: *Dog ID*,*Test Name* 
 
 **Text**: *Created At* (aggregation level up to you)
@@ -212,15 +220,23 @@ c. For level of details, select the Minute. (lots of tests were created during t
 
 ##### Tableau
 **Rows**: Dog ID, Test name, Mimic rank 
+
 Text: Minute(Created at) 
+
 -->Edit Table Calculation
+
 -->Specific Dimensions: *Minute of Created At*, *Test Name*.
+
 --> Convert the calculated field to dimension by selecting Discrete.
+
 --> Place the calculated field in the Rows shelf, behind Test Name.
+
 <img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2001.16.58.png"/>
 
 Links:
+
 https://www.coursera.org/learn/analytics-tableau/discussions/weeks/3/threads/yrDl_sMvEeiALwrKWTa7ig
+
 https://www.coursera.org/learn/analytics-tableau/discussions/weeks/3/threads/kpBB3nPmEeiPrBLBSH_lGA
 
 
