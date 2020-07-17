@@ -49,7 +49,9 @@ The Dognition tests are organized into subcategories of cognitive abilities/pers
 (5 subcategories in the first 20 tests comprising the Dognition Assessment). 
 
 **Color**: *Subcategory Name*/*Test Name* 
+
 <img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2013.03.15.png"/>
+
 **Q**:
 1. After which tests do users tend to drop off? 
 2. Do they drop off in the middle of the tests within a subcategory, or at the end of all the tests associated with a subcategory? 
@@ -67,7 +69,9 @@ To better target advertisements, need to know when customers tend to play the Do
 **Columns**: *Created At*
 
 **Rows**: *Number of Records*
+
 <img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2013.44.57.png"/>
+
 **Use Tableau’s date hierarchy** 
 
 ##### Analysis: 
@@ -105,7 +109,7 @@ You will see that *Diff from UTC* below “time_zone_correction” worksheet.
 Make a row calculation that will adjust each value of *Created At* by the correction provided in *Diff from UTC*.
 
 use the **DATEADD** function in your calculated field:
-adjusted date
+adjusted date：
 DATEADD('hour',[Diff from UTC],[Created at])
 
 **columns**: 'adjusted date'
@@ -141,69 +145,82 @@ Choose the options that allow you to filter by “Weekdays.”
 Grouping: Group *Free Start User* into “Free Start”/“non-Free Start” .
 
 2. Get an idea of how many data points you have for both categories(Visualization & Marks Card). 
-Examine when *Free Start users* were enrolled, and how many *non-Free Start users* were enrolled at the same time. 
+Examine when *Free Start users* were enrolled, and how many *non-Free Start users* were enrolled at the same time.
+
 <img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2021.34.09.png"/>
+
 ##### Tableau
 
 **Columns**: *Free Start User(Group)*, *Rank by DogID*. 
 
-**Rows**: *Dog ID*(Count (distinct) ). 
+**Rows**: *Dog ID*(Count (distinct) ).
+
+Free Start users:
 <img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2021.41.36.png"/>
-![]()
+
+non-Free Start users:
 <img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2021.52.24.png"/>
 
-It looks like *Free Start* users do not finish as many tests as *non-Free Start*users, but it’s hard to know for sure because there are fewer *Free Start* users to start with. 
-A more direct way to assess the success of *Free Start* users would be to compute a table calculation that would tell you what percentage of users who start the
-Dognition Assessment make it to each test along the way. 
+**Analysis**: 
+1. It seems *Free Start* users do not finish as many tests as *non-Free Start*users, but it’s hard to know for sure because there are fewer *Free Start* users to start with. 
 
-Without removing any of the pills you currently have on the Columns or Rows shelves,
-drag another instance of *Dog ID* to the **Rows** shelf. 
-Click on the drop down and choose quick table calculation option, followed by “percent of total.” 
-You should now have one set of bar charts that show you the raw numbers of dogs who completed a certain number
-of tests, and a second set of charts that show you what percentage of a total those raw numbers represent.
-The goal in making the table calculation was to determine what percentage of those who
-start their Dognition experience with a free start finish each number of tests. 
-Do the charts you see depict that? Probably not, because the calculated field is likely making
-calculations with all the data in the work space together at the same time, rather than
-doing the calculation separately for different partitions within the work space. 
-You have to tell Tableau what partitions the table calculation should take into account. 
-To do this, click on the table calculation to edit it. 
-Can you figure out how to set the advanced options so that the table calculation computes percentages separately for Free Start users
-vs non-Free Start users? 
-Do you think the *Free Start* tests seem to be working as intended?
+2. To better assess the success of *Free Start* users, compute a table calculation on percentage of users in two subcategories. 
+
+**Rows**: *Dog ID* 
+
+Second CNTD(DogID)-> Edit Table Calculation-> 'percent of total'-> Specific Dimension -> Rank by DogID (addressing fields).
+**partition**: The table calculation is performed separately within each partition.
+**addressing**: Determine the direction of the calculation
+
+Free Start users:
+<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2023.42.07.png"/>
+
+non-Free Start users:
+<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-16%20at%2023.42.26.png"/>
+
+One bar chart shows you the raw data, and a second chart shows you the percentage of a total those raw numbers.
+The chart shows what percentage of those who start their Dognition experience with a free start finish each number of tests. 
+
+3. 1.07% of free-starters finished the 20-question Assessment, while 2.57% in non-free-start users. 
 
 #### Exercise 4
-In this exercise, we are going to use table calculations to determine how we could use Tableau to
-dynamically recreate the ranks stored in the Rank by DogID and Rank by UserID variables.
-These variables, remember, chronologically rank each test according to its associated time
-stamp in Created At, and restart the ranking either for every dog or for every customer.
-To begin, make a group of Dog IDs that only has a few Dog IDs included (randomly
-choose 4 or 5 DogIDs). Use your new grouped variable and the filter shelf to ensure that
-you only analyze the data from the few dogs you chose in your workspace. This will make
-troubleshooting your calculations much faster.
-Next, place Dog ID on the rows shelf, followed by Test Name on the right-hand side.
-Then put Created At on Text, and adjust the variable aggregation so that you get a level of
-detail that is appropriate for the purpose of the exercise. You should see a table with Dog
-ID in the left-most column, Test Name in the column to the right of that, and the time the
-test was created in the right-most column.
-Our goal is going to be to create a column between the Test Name and Created At columns
-that uses a calculation (NOT Rank by DogID – that would be cheating!) to indicate the
-ranked order each test was completed, sorted from 1 to the last test taken. To achieve this,
-make a calculation that starts with RANK, and then drag the Created At pill from your
-workspace into the parentheses Tableau automatically inserts in your calculated field.
-Notice that Tableau will likely insert a date function with the level of detail you specified
-on the Created At pill in your table. You will need to choose whether the rank should be
-ascending or descending.
-As you troubleshoot your calculation, think carefully about whether the variables in your
-calculation need to be aggregated, and if so, how. Also think about what level of detail of
-the time stamps provided in Created At would be most useful.
-Once you have a valid calculation, drag it to Details. Then right-click (control-click) to
-edit the calculation, and navigate to the “Compute Using” screen. Chose the options you
-think are most appropriate for your goals. Once selected, convert the pill to a dimension
-and place it in the appropriate place on the Rows shelf. Assess whether your calculation
-succeeded by comparing your rank to the rank provided in Rank by DogID.
-Can you make a similar calculation that ranks the tests completed by each human user,
-mimicking the information provided in Rank by UserID? Can you figure out how to
-include both ranks in the same table?
+Use table calculations to determine how we could dynamically recreate the ranks stored in the *Rank by DogID* and *Rank by UserID*.
+
+##### Tableau
+**rows**: *Dog ID*,*Test Name* 
+
+**Text**: *Created At* (aggregation level up to you)
+
+**Result table**-> *Dog ID* + *Test Name* + time test was created.
+
+**Next**: Use calculation, create a column between *Test Name* & *Created At* columns, to indicate the ranked order each test completed (from 1 to the last test taken). 
+
+**Make a calculation**:
+Mimic rank 
+
+1. RANK(ATTR([Created at]),'asc') 
+
+a. think whether the variables in your calculation need to be aggregated, and if so, how. -->ATTR()
+
+b. think what level of detail of the time stamps in *Created At* would be most useful.
+
+c. For level of details, select the Minute. (lots of tests were created during the same hour. If "Hour" is selected, ranking might not work.)
+
+2. **Details**: Mimic rank 
+
+3. Edit calculation, navigate to the “Compute Using”. 
+
+##### Tableau
+**Rows**: Dog ID, Test name, Mimic rank 
+Text: Minute(Created at) 
+-->Edit Table Calculation
+-->Specific Dimensions: *Minute of Created At*, *Test Name*.
+--> Convert the calculated field to dimension by selecting Discrete.
+--> Place the calculated field in the Rows shelf, behind Test Name.
+<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2001.16.58.png"/>
+
+Links:
+https://www.coursera.org/learn/analytics-tableau/discussions/weeks/3/threads/yrDl_sMvEeiALwrKWTa7ig
+https://www.coursera.org/learn/analytics-tableau/discussions/weeks/3/threads/kpBB3nPmEeiPrBLBSH_lGA
 
 
