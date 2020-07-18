@@ -85,7 +85,9 @@ During which month in the data set were the most tests completed?
 
 ##### Tableau
 Columns: Year(Created At), Month(Created At) / Column: Month(Correc...)
+
 Rows: CNT(master_table)
+
 Filters: Shih Tzu 190: View
 
 <img width="700" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2020.55.27.png"/>
@@ -106,7 +108,9 @@ After adjusting the time stamps 'dognition_data_no_aggregation' for time zone di
 **Formula: DATEADD("hour",[Diff from UTC],[Created at])**
 
 Columns: HOUR(Corrected Created at)
+
 Rows: CNT(Number of Records
+
 Filters: Shih Tzu 190: View
 
 <img width="700" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2021.13.19.png"/>
@@ -117,7 +121,9 @@ In the 'dognition_data_no_aggregation', approximately what percentage of users c
 ##### Tableau 
 
 Columns: Rank by DogID
+
 Rows: CNTD(Dog ID)
+
 Filters: Shih Tzu 190: View
 
 Right-click on CNTD(Dog ID)-> "Quick Table Calculation..." -> "Percent of Total".
@@ -134,7 +140,9 @@ In 'dognition_data_no_aggregation', what percentage of users who begin with a �
 Free Start User -> right click -> Create-> Group
 
 Columns: Free Start User(Grouped), Rank by dogID
+
 Rows: CNTD(DogID)
+
 Filters: Shih Tzu 190: View
 
 <img width="700" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2022.05.18.png"/>
@@ -142,14 +150,18 @@ Filters: Shih Tzu 190: View
 <img width="700" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2022.05.44.png"/>
 
 It seems that free start promotion didn't work as they thought.
+
 Maybe Dognition should modify their marketing strategy. Eye Contact is the game where most dogs dropped off. 
 
 ##### Q9
 Using the 'dognition_data_no_aggregation', rows: “Dog ID” and “Test Name”, Text: Created At, which of the following might be a value you would see in the column farthest to the right, if the “Created At”was blue and read SECOND(Created At)?
 
 ##### Tableau
+
 Columns:
+
 Rows: Dog ID, Test name
+
 Text: Second(Corrected Created At)
 
 ##### Q10
@@ -164,8 +176,11 @@ An aggregation before [Created At]is needed, the most appropriate of which is AT
 
 ##### Q11
 You are writing a **calculation** to rank each test a dog completed by its time stamp in 'dognition_data_no_aggregation'. 
+
 Partitioning: “Dog ID”,“Test Name” 
+
 Addressing: “Second Created”
+
 The resulting rank will:
 
 **Analysis:**
@@ -176,13 +191,19 @@ The calculation should achieve the same purpose as the **Ranked** *Dog ID*.
 
 **Rank** function:
 * Name the calculation RANK 
+
 * Rank(ATTR([Created at]),"asc")
+
 * Place *RANK* in **Detail**. 
+
 * Edit Table Calculation/ Compute Using--> Test Name
+
 * Change Rank to Discrete. 
 
 **Columns**:
+
 **Rows**: Dog ID, Test name, RANK
+
 **Text**: RANK
 
 <img width="700" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-18%20at%2003.10.33.png"/>
@@ -194,8 +215,11 @@ Similar to Q11.
 
 ##### Tableau
 Columns:
+
 Rows: User ID, Test name
+
 Filters: Dog ID (group), 
+
 Text:  RANK
 
 
@@ -206,6 +230,7 @@ the greatest drop offs of test-takers occur after a subcategory of tests is comp
 are still in progress. T/F
 
 Answer: True
+
 Comment: That graph shows that for those dogs that did not complete the 20 questions of the Assessment, most of them dropped off 
 after they completed the Empathy subcategory. So, what do you think the answer to Q1 is? True or False. It should be easy to tell by 
 now.
@@ -214,6 +239,7 @@ now.
 2. In the dognition_data_no_aggregation data set, after which game is the drop-off of completed tests the greatest?
 
 Answer: Eye Contact Game
+
 Comment: Each color now represents a test name. Using the same approach as in Q1 and each color from where it almost dominates the 
 whole bar to where it is barely visible and compare the difference in Counts of Number of Records. You should find that the largest
 difference is in the dark green color, the 4th bar that represents the Eye Contact game. Point your cursor to the 5th bar and carefully
@@ -226,6 +252,7 @@ If you complete exercise 1 (Rank by DogID as a dimension and Number of records o
 how many different sequences of tests were administered to customers in the data that are left?
 
 Answer: at least 4
+
 Comment:Examine the graph for Q2. Point your cursor at the first bar and count the number of different colors in that bar. 
 There are at least 4 different colors, meaning there are at least this many different sequences of tests were administered to the 
 customers after the test accounts are taken out. I think I gave you the answer on this one already.
@@ -233,10 +260,13 @@ customers after the test accounts are taken out. I think I gave you the answer o
 4. During which day of the week do customers play Dognition games the most?
 
 Answer: Sunday
+
 Comments: set correct time column value to week. 
 
 5. During which month in the data set were the most tests completed?
+
 Answer: October 2014 
+
 Comment: Point your cursor to the highest point of the graph and you should see the month Q5 is asking for.
 
 6. After adjusting the time stamps of the tests completed by United States users provided in the “Created At” field of 
@@ -244,6 +274,7 @@ the dognition_data_no_aggregation data set for time zone differences, during whi
 play the most amount of games?
 
 Answer: 7 PM
+
 Comment: Point the cursor to the highest point of the graph to find the hour that customers are most likely to play games with their 
 dogs. It says 19. That's 24-hour format. Subtract 12 to get the PM hour.Isn't the answer to Q6 obvious now?
 
@@ -251,6 +282,7 @@ dogs. It says 19. That's 24-hour format. Subtract 12 to get the PM hour.Isn't th
 Dognition Assessment complete 20 tests?
 
 Answer: 23% 
+
 Comment:The bar chart at the bottom now has the percentage of dogs that completed each number of tests. To find out the percentage
 that completed 20 tests, point your cursor at the bar of bottom bar chart that represented 20.
 Isn't Q7 so easy that the credit is practically being handed to you for free?
@@ -259,6 +291,7 @@ Isn't Q7 so easy that the credit is practically being handed to you for free?
 using a “Free Start” promotion complete 20 tests?
 
 Answer: 6%
+
 Comment:"1" means free-starters. At the bottom bar chart, in the part that has "1" on top, point your cursor to the bar for 20 
 and you should see the percentage of free starters that completed all 20 tests.
 
@@ -267,6 +300,7 @@ and Created At on the Text property of the Marks card, which of the following mi
 the column farthest to the right, if the “Created At” pill was blue and read SECOND(Created At)?
 
 Answer: 0
+
 Comment: The column after Test name have values of 0
 
 10. Question 10: If you were writing a calculation to rank each test a dog completed by its time stamp in
@@ -288,6 +322,7 @@ You’ve configured your table calculation so that “Dog ID” and “Test Name
 and “Second Created” is in the Addressing field. The resulting rank will:
 
 Answer: List “1” for the first test of every Dog ID
+
 Comment:The purpose of writing a calculation here is to, for each dog ID, rank the tests according to the order they were taken. 
 For every dog ID, the first test taken would receive the rank 1, the second would receive the rank 2 and so on. The calculation 
 should achieve the same purpose as the Ranked by Dog ID field. Once you understand the purpose and function of the calculation, there 
@@ -301,6 +336,7 @@ Partitioning field in the calculation configuration page in your new calculation
 (check all that apply)
 
 Answer: User ID
+
 Comments: Q12 is very similar to Q11. Q11 uses Dog ID as a partition field. The ranking starts all over at each change of Dog ID. 
 The only difference between Q11 and Q12 is that while Dog ID is used in Q11, User ID should be used in Q12. Please refer to my 
 explanation for Q11 for the fine details.There is only one correct choice. With the above being said, isn't it obvious which choice 
