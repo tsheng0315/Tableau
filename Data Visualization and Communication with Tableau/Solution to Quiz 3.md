@@ -7,6 +7,7 @@ https://www.coursera.org/learn/analytics-tableau/discussions/weeks/3/threads/zCe
 https://www.coursera.org/learn/analytics-tableau/discussions/weeks/3/threads/bJri_MMrEeirTw7nbK3LWA
 
 #### Explanations for the graded quiz.
+
 1. Use the dognition_data_no_aggregation data set
 
 Data set description: 
@@ -22,21 +23,31 @@ Otherwise, will lead to inaccurate analysis.
 2. Choose Create Calculated Field...
 
 **Function in Calculated Field**
+
 Name: 'Shih Tzu 190' : 
 
 IF [Breed]="Shih Tzu"
+
 AND  [Weight]=190
+
 THEN 'Shih Tzu 190'
+
 ELSE 'View'
+
 END
 
 #### Q1
+
 The greatest drop off happens after a subcategory of tests or while the subcategories of tests are in progress?
 
 ##### Tableau
+
 Column: Rank by DogID
+
 Rows: CNT(Number of records)
+
 Filters: Shih Tzu 190: View
+
 Mark Card: [Color: Subcategory Name]
 
 <img width="700" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2019.06.26.png"/>
@@ -52,9 +63,13 @@ The huge gap between the orange bar and others indicating a large decrease in th
 In the 'dognition_data_no_aggregation', after which game is the drop-off of completed tests the greatest?
 
 ##### Tableau
+
 Column: Rank by DogID
+
 Rows: CNT(Number of records)
+
 Filters: Shih Tzu 190: View
+
 Color: “Test Name”
 
 --> Each color now represents a test name.
@@ -73,17 +88,21 @@ Same as Q3
 There are at least 4 different colors, meaning there are at least this many different sequences of tests.
 
 ##### Q4
+
 During which day of the week do customers play Dognition games the most?
 
 ##### Tableau
+
 Aggregation level: weekday
 
 <img width="700" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2020.49.58.png"/>
 
 ##### Q5
+
 During which month in the data set were the most tests completed?
 
 ##### Tableau
+
 Columns: Year(Created At), Month(Created At) / Column: Month(Correc...)
 
 Rows: CNT(master_table)
@@ -93,6 +112,7 @@ Filters: Shih Tzu 190: View
 <img width="700" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2020.55.27.png"/>
 
 ##### Q6
+
 After adjusting the time stamps 'dognition_data_no_aggregation' for time zone differences, which hour of the day do Dognition customers play the most amount of games?
 
 ##### Tableau
@@ -116,6 +136,7 @@ Filters: Shih Tzu 190: View
 <img width="700" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2021.13.19.png"/>
 
 #####  Q7
+
 In the 'dognition_data_no_aggregation', approximately what percentage of users complete 20 tests?
 
 ##### Tableau 
@@ -130,11 +151,13 @@ Right-click on CNTD(Dog ID)-> "Quick Table Calculation..." -> "Percent of Total"
 
 
 ##### Q8
+
 In 'dognition_data_no_aggregation', what percentage of users who begin with a “Free Start” complete 20 tests?
 
 --> Very similar to Q7, except that you need to create a group variable that separate the free-starters from the non-free-starters.
 
 ##### Tableau
+
 ##### Group
 
 Free Start User -> right click -> Create-> Group
@@ -154,6 +177,7 @@ It seems that free start promotion didn't work as they thought.
 Maybe Dognition should modify their marketing strategy. Eye Contact is the game where most dogs dropped off. 
 
 ##### Q9
+
 Using the 'dognition_data_no_aggregation', rows: “Dog ID” and “Test Name”, Text: Created At, which of the following might be a value you would see in the column farthest to the right, if the “Created At”was blue and read SECOND(Created At)?
 
 ##### Tableau
@@ -165,6 +189,7 @@ Rows: Dog ID, Test name
 Text: Second(Corrected Created At)
 
 ##### Q10
+
 When writing a calculation to rank each test a dog completed by its time stamp in 'dognition_data_no_aggregation', what's wrong with the rank table calculation: RANK(([Created At]),'asc')?
 
 1. If simply place the Created At variable inside **RANK()**, Tableau will give you an error message.
@@ -175,6 +200,7 @@ An aggregation before [Created At]is needed, the most appropriate of which is AT
 
 
 ##### Q11
+
 You are writing a **calculation** to rank each test a dog completed by its time stamp in 'dognition_data_no_aggregation'. 
 
 Partitioning: “Dog ID”,“Test Name” 
@@ -184,12 +210,14 @@ Addressing: “Second Created”
 The resulting rank will:
 
 **Analysis:**
+
 The purpose: For each dog ID, rank the tests according to the order they were taken.
 The calculation should achieve the same purpose as the **Ranked** *Dog ID*.
 
 ##### Tableau
 
 **Rank** function:
+
 * Name the calculation RANK 
 
 * Rank(ATTR([Created at]),"asc")
@@ -209,11 +237,13 @@ The calculation should achieve the same purpose as the **Ranked** *Dog ID*.
 <img width="700" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-18%20at%2003.10.33.png"/>
 
 ##### Q12 
+
 Write a calculation to create a column in a table that ranks each test a human user completed by its time stamp in 'dognition_data_no_aggregation'. 
 The following fields will go in the Partitioning in your new calculation meant to rank each test a human user completed: 
 Similar to Q11.
 
 ##### Tableau
+
 Columns:
 
 Rows: User ID, Test name
@@ -225,6 +255,7 @@ Text:  RANK
 
 
 ### Quiz 3
+
 1. Use the dognition_data_no_aggregation data set provided in this course for this quiz.In the dognition_data_no_aggregation data set, 
 the greatest drop offs of test-takers occur after a subcategory of tests is completed rather than while the subcategories of tests 
 are still in progress. T/F
