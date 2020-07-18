@@ -39,7 +39,7 @@ Rows: CNT(Number of records)
 Filters: Shih Tzu 190: View
 Mark Card: [Color: Subcategory Name]
 
-<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2019.06.26.png"/>
+<img width="700" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2019.06.26.png"/>
 
 ##### Analysis
 --> The highest four bar are mostly orange, the color is for the Empathy subcategory. 
@@ -78,7 +78,7 @@ During which day of the week do customers play Dognition games the most?
 ##### Tableau
 Aggregation level: weekday
 
-<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2020.49.58.png"/>
+<img width="700" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2020.49.58.png"/>
 
 ##### Q5
 During which month in the data set were the most tests completed?
@@ -88,7 +88,7 @@ Columns: Year(Created At), Month(Created At) / Column: Month(Correc...)
 Rows: CNT(master_table)
 Filters: Shih Tzu 190: View
 
-<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2020.55.27.png"/>
+<img width="700" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2020.55.27.png"/>
 
 ##### Q6
 After adjusting the time stamps 'dognition_data_no_aggregation' for time zone differences, which hour of the day do Dognition customers play the most amount of games?
@@ -99,7 +99,7 @@ After adjusting the time stamps 'dognition_data_no_aggregation' for time zone di
 2. Edit blend data source: "dognition_data_no_aggregation_with_zip_code_correction"
 3. Drag master table & time zone correction into worksheet
 
-<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2021.06.34.png"/>
+<img width="700" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2021.06.34.png"/>
 
 4. Create a calculated field to correct the hours.
 
@@ -109,7 +109,7 @@ Columns: HOUR(Corrected Created at)
 Rows: CNT(Number of Records
 Filters: Shih Tzu 190: View
 
-<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2021.13.19.png"/>
+<img width="700" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2021.13.19.png"/>
 
 #####  Q7
 In the 'dognition_data_no_aggregation', approximately what percentage of users complete 20 tests?
@@ -137,9 +137,9 @@ Columns: Free Start User(Grouped), Rank by dogID
 Rows: CNTD(DogID)
 Filters: Shih Tzu 190: View
 
-<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2022.05.18.png"/>
+<img width="700" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2022.05.18.png"/>
 
-<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2022.05.44.png"/>
+<img width="700" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-17%20at%2022.05.44.png"/>
 
 It seems that free start promotion didn't work as they thought.
 Maybe Dognition should modify their marketing strategy. Eye Contact is the game where most dogs dropped off. 
@@ -185,7 +185,7 @@ The calculation should achieve the same purpose as the **Ranked** *Dog ID*.
 **Rows**: Dog ID, Test name, RANK
 **Text**: RANK
 
-<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-18%20at%2003.10.33.png"/>
+<img width="700" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-18%20at%2003.10.33.png"/>
 
 ##### Q12 
 Write a calculation to create a column in a table that ranks each test a human user completed by its time stamp in 'dognition_data_no_aggregation'. 
