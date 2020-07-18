@@ -1,5 +1,9 @@
 ## Hints for Week 3 Graded Quiz
 
+Example Story:
+
+https://public.tableau.com/views/practiceexercise3_0/Story1?%3Aembed=y&%3AshowVizHome=no&%3AshowTabs=y&%3Adisplay_count=y&%3Adisplay_static_image=y
+
 Links:
 
 https://www.coursera.org/learn/analytics-tableau/discussions/weeks/3/threads/zCedfoM-EemgVwpW7bTUyA
