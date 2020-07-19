@@ -48,6 +48,14 @@ You could ask something like "if your parents over the age of 75, had a choice b
 
 5. People are more likely to be persuaded by an argument if you get them into a general feeling of agreement first
 
+6. If NOT contrversial
+
+*Start with strongest point first
+
+7. If it is controversial
+
+*Start with least controversial (people are most likely to agree if you get them saying “yes” first
+
 ## Common Error
 
 ### Overgeneralization and Sample Bias
@@ -90,6 +98,9 @@ Include comparison groups that should not have the effect you were looking for i
 5. likelihood for getting into trouble increase as the complexity of your data sets increases as well
 
 6. A correlation between two variables is consistent and reliable, one variable can be used to both measure and predict the other even if one doesn't cause the other
+
+
+
 
 ## Choosing Visualizations for Story Points
 
