@@ -114,8 +114,49 @@ Include comparison groups that should not have the effect you were looking for i
 * Pie charts for conveying in general information about percentages when you are going to highlight four or fewer categorie
 
 
+## Tips in Slides
+
+1. High data ratio(delete un-relevent data)
+2. Understand at glance
+3. Label non-obvious axis in your graph
+4. Use full words unless abbreviations are extremely common
+5. Label directly on the chart instead of using a legend
+6. Horizontal labels are easier to read than vertical labels.
+7. If 30.5 font the text will no longer fit on one page, it is too much text on one slide
+
+**Before**
+<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-19%20at%2000.50.31.png"/>
+
+**After**
+<img width="500" height="500" src="https://github.com/tsheng0315/Tableau/blob/master/Data%20Visualization%20and%20Communication%20with%20Tableau/image/Screenshot%202020-07-19%20at%2000.50.47.png"/>
+
+## Presentations
+
+1. Soft breaks-> Transition slides:
+
+Summarize what you just went over, provide something visually engaging/ shift gears and prepare the audience to go in a different direction
+
+2. Make items appear in the order you talk about them, this is an effective way to control your audience's attention
+
+3. Use anamation to call attention by adding an arrow or call-out box
+
+4. Use bolding to emphasize a word
+
+5. Use the same 2 to 3 colors.
 
 
 
-h
+6. only use language that everybody in the general audience would understand.
+
+7. plan on at least two to three points in your presentation where you ask for audience participation
+
+8. convey your enthusiasm and energy for what you've done in your voice.
+
+9. practice just one small piece of your presentation over and over again until you are completely comfortable with it. Then move to practicing another small piece,
+
+10. try to remain physically open by keeping your arms away from the front of your body. So don't cross your arms. Directly face your audience. And of course, smile
+
+11. make sure you look at different people in the room, so that you don't exclude anyone
+
+12. ask for feedback from your colleagues
 
