@@ -3,7 +3,7 @@ Define the problem:
 
 A consistent trend of drop off test rates
 
-** Smart Goal**: 
+**Smart Goal**: 
 
 Improve the completion rate of the first 20 test completed per subcriber by 10% over the next 3 months
 
